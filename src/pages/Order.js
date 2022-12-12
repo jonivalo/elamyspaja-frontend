@@ -27,7 +27,7 @@ export default function Order({cart,removeFromCart,updateAmount}) {
 
   return (
     <div>
-      <h3 className="header">Items in cart</h3>
+      <h3 style={{color: 'blue'}} className="header">Tilaamasi tuotteet</h3>
       <table className="table">
         <tbody>
           {cart.map((product,index) => {

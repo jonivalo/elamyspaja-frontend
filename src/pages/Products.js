@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React,{useState,useEffect} from 'react';
 import { Link, useParams } from 'react-router-dom';
+import './Products.css';
 
 export default function Products({url,addToCart}) {
   const [categoryName,setCategoryName] = useState('');
@@ -25,7 +26,7 @@ export default function Products({url,addToCart}) {
       {products.map(product => (
         <div key={product.id}>
           {product.name}
-          <button style={{backgroundColor: 'rgb(166, 190, 239)', color:'black' , padding:'20px', margin: '30px'}} className='btn btn-primary' type="button" onClick={e => addToCart(product)}>Lisää ostoskoriin</button>
+          <button id="addProductButton"style={{backgroundColor: 'rgb(166, 190, 239)', color:'black' , padding:'20px', margin: '30px'}} className='btn btn-primary' type="button" onClick={e => addToCart(product)}>Lisää ostoskoriin</button>
         </div>
       ))}
     </div>

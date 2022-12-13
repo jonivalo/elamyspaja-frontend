@@ -1,6 +1,6 @@
 import React,{useState,useEffect, createRef} from 'react';
 import uuid from 'react-uuid';
-
+import './Order.css';
 
 export default function Order({cart,removeFromCart,updateAmount}) {
   const [inputs,_] = useState([]);
@@ -39,7 +39,7 @@ export default function Order({cart,removeFromCart,updateAmount}) {
                 <td>
                   <input ref={inputs[index]} style={{width: '60px'}} value={product.amount} onChange={e => changeAmount(e,product,index)} />
                 </td>
-                <td><a href="#" onClick={() => removeFromCart(product)}>Delete</a></td>
+                <td><a href="#" onClick={() => removeFromCart(product)} id="deleteButton">Poista</a></td>
               </tr>
             )
             })}

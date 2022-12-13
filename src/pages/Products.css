@@ -1,0 +1,8 @@
+/*ei ottanut tätä tyyliä täältä, joten tuolla Products.js sivulla 
+määritelty tälle näppäimelle tämä sama tyyli toistaiseksi*/
+#addProductButton {
+    background-color: rgb(166, 190, 239);
+    color:black;
+    padding: 20px;
+    margin: 30px;}
+

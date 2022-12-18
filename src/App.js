@@ -10,10 +10,13 @@ import Product from './pages/Product';
 import Order from './pages/Order';
 import NotFound from './pages/NotFound';
 
-const URL ='http://localhost/elamyspaja-backend/';
+
+const URL = "http://localhost/elamyspaja-backend/";
 
 function App() {
   const [cart, setCart] = useState([]);
+
+  
 
   useEffect(() => {
    if ('cart' in localStorage) {

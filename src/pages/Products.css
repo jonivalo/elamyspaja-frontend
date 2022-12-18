@@ -1,8 +1,9 @@
-/*ei ottanut tätä tyyliä täältä, joten tuolla Products.js sivulla 
-määritelty tälle näppäimelle tämä sama tyyli toistaiseksi*/
-#addProductButton {
-    background-color: rgb(166, 190, 239);
-    color:black;
-    padding: 20px;
-    margin: 30px;}
+.productrow{
+    border-top:  2px solid #333;
+    font-weight: bold;
+    border-bottom: none;
+  }
 
+.productwidht{
+    width: 40rem;
+}

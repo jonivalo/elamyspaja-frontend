@@ -6,10 +6,7 @@ import './Home.css';
 
 export default function Home() {
   return (
-    <main className="flex-shrink-0 bg-light">
-      <div id="content"></div>
-      <h1 id="homeHeader">"Elämyspaja otsikko isolla, ehkä logo tai iso kuva"</h1>
-    </main>
+    <div className="homeheader">Home</div>
     
   )
 }

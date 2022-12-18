@@ -2,6 +2,9 @@ import axios from 'axios';
 import React,{useState,useEffect} from 'react';
 import Cart from './Cart';
 import { Link } from 'react-router-dom';
+import './Navbar.css';
+
+
 
 
 export default function Navbar({url,cart}) {
@@ -20,7 +23,7 @@ export default function Navbar({url,cart}) {
 
 
   return (
-    <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <nav className="navbar navbar-expand-md fixed-top navbarheader">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">Elämyspaja</Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">

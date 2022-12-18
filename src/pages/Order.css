@@ -1,3 +1,14 @@
-#deleteButton{
-    color: red;
-}
+.header {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .buttons {
+    margin-top: 20px;
+  }
+  
+  .sumrow {
+    border-top:  2px solid #333;
+    font-weight: bold;
+    border-bottom: none;
+  }

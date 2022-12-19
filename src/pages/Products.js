@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React,{useState,useEffect} from 'react';
-import { Link, useParams } from 'react-router-dom';
+import {  useParams } from 'react-router-dom';
 import './Products.css';
 
 
@@ -25,11 +25,12 @@ export default function Products({url,addToCart}) {
     <div>
       <h3>Tuotteet {categoryName}</h3>
       {products.map(product => (
-        <div class="card productwidht">
+        <div className="card productwidht">
         <div key={product.id}>
-         <h5 class="card-title"> {product.name} </h5>
-         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+         <h5 className="card-title"> {product.name} </h5>
+         <p className="card-text">{product.description}.</p>
          <div> {product.price} €</div>
+         <div> {product.image}</div>
           <button className="btn btn-primary" type="button" onClick={e => addToCart(product)}>Lisääppä tuote lisääppä...</button>
         </div>
         </div>

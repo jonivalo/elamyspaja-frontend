@@ -1,14 +1,16 @@
 import axios from 'axios';
 import React,{useState,useEffect} from 'react';
 import Cart from './Cart';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import './Navbar.css';
+
 
 
 
 
 export default function Navbar({url,cart}) {
   const [categories,setCategories] = useState([]);
+  const [search,setSearch] = useState([]);
 
   useEffect(() => {
     axios.get(url + 'products/getcategories.php')
@@ -19,6 +21,13 @@ export default function Navbar({url,cart}) {
         alert(error.response === undefined ? error : error.response.data.error);
       })
   }, [])
+
+  function executeSearch(e) {
+    if (e.charCode === 13) {
+      e.preventDefault();
+      Navigate('/search/' + search)
+    }
+  }
   
 
 
@@ -49,7 +58,21 @@ export default function Navbar({url,cart}) {
               </ul>
             </li>
             
+
+            
           </ul>
+          <form className="form-inline my-2 my-lg-0">
+            <input
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            onKeyDown={(e) => executeSearch(e)}
+            className="fprm-control mr-sm-2"
+            type="search"
+            placeholder="Search"
+            arial-label="Search"
+            />
+          </form>
+
           <ul className='navbar-nav ml-auto'>
             <li className='nav-item'>
               <Cart cart={cart} />

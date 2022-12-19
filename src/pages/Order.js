@@ -59,8 +59,8 @@ export default function Order({cart,removeFromCart,updateAmount, empty, e}) {
   let sum = 0;
 
   return (
-    <div>
-      <h3 className="header">Tilaamasi tuotteet</h3>
+    <div className="container">
+      <h3 >Tilaamasi tuotteet</h3>
       <table className="table">
         <tbody>
           {cart.map((product,index) => {

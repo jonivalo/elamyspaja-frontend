@@ -11,6 +11,10 @@ import Order from './pages/Order';
 import NotFound from './pages/NotFound';
 
 
+
+
+
+
 const URL = "http://localhost/elamyspaja-backend/";
 
 function App() {
@@ -54,11 +58,15 @@ function App() {
     <>
       <Header />
       <Navbar url={URL} cart={cart}/>
-      <div className='container'>
+      <div className="container">
+        
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products/:categoryId" element={<Products url={URL} addToCart={addToCart}/>} />
+          <Route path="/search/:searchPhrase" element={<Products url={URL} />} />
           <Route path="/product/:productId" element={<Product url={URL} />} />
+          
+         
           <Route path="/order" element={<Order cart={cart} removeFromCart={removeFromCart} updateAmount={updateAmount}/>} />
           
           <Route path="*" element={<NotFound />} />

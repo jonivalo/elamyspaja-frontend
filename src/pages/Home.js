@@ -8,7 +8,7 @@ import './Home.css';
 
 export default function Home() {
   return (
-    <div className="homeheader">Home</div>
+    <div className="homeheader">Rohkeasti valitsemaan tuote</div>
     
   )
 }

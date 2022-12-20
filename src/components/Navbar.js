@@ -41,7 +41,7 @@ export default function Navbar({url,cart}) {
         <div className="collapse navbar-collapse" id="navbarCollapse">
           <ul className="navbar-nav me-auto mb-2 mb-md-0">
             <li className="nav-item">
-              <Link className="nav-link" to="/">Home</Link>
+              <Link className="nav-link" to="/">Tere tulemast</Link>
             </li>
             <li className='nav-item dropdown'>
               <a className='nav-link dropdown-toggle' href="#" id="dropdown01" 
@@ -57,6 +57,21 @@ export default function Navbar({url,cart}) {
                 ))}
               </ul>
             </li>
+            <li className="nav-item">
+              <Link className="nav-link" to={'/products/1'}>Hemmoittelu</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to={'/products/2'}>Pakopelit</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to={'/products/3'}>Maalaiselämykset</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to={'/products/4'}>Eläimet</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to={'/products/5'}>Huimapäille</Link>
+            </li>
             
 
             
@@ -65,10 +80,10 @@ export default function Navbar({url,cart}) {
             <input
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            onKeyDown={(e) => executeSearch(e)}
+            key={(e) => executeSearch(e)}
             className="fprm-control mr-sm-2"
             type="search"
-            placeholder="Search"
+            placeholder="Haku..."
             arial-label="Search"
             />
           </form>

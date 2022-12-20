@@ -1,10 +1,10 @@
 import axios from 'axios';
-import React,{useState,useEffect, createRef} from 'react';
+import React,{useState, useEffect, createRef} from 'react';
 import uuid from 'react-uuid';
 import './Order.css';
 import 'react-bootstrap';
 
-export default function Order({cart,removeFromCart,updateAmount, empty, e}) {
+export default function Order({cart,removeFromCart,updateAmount, empty}) {
   const [inputs,_] = useState([]);
   const [inputIndex, setInputIndex] = useState(-1);
   const [firstname, setFirstname] = useState('');
@@ -31,7 +31,7 @@ export default function Order({cart,removeFromCart,updateAmount, empty, e}) {
     setInputIndex(index);
   }
 
-  function order(url) {
+  function order(url, e) {
     e.preventDefault();
     
     const json = JSON.stringify({
@@ -72,14 +72,14 @@ export default function Order({cart,removeFromCart,updateAmount, empty, e}) {
                 <td>
                   <input ref={inputs[index]} style={{width: '60px'}} value={product.amount} onChange={e => changeAmount(e,product,index)} />
                 </td>
-                <td><a href="#" onClick={() => removeFromCart(product)}>Delete</a></td>
+                <td><a href="#" onClick={() => removeFromCart(product)}>Poistha</a></td>
               </tr>
             )
             })}
           <tr key={uuid()}>
             <td className="sumrow"></td>
             <td className="sumrow">{sum.toFixed(2)} €</td>
-            <td className="sumrow"><a href="#" onClick={e => empty()}>Empty</a></td>
+            <td className="sumrow"><a href="#" onClick={e => empty()}></a></td>
           </tr>
         </tbody>
       </table>
@@ -88,27 +88,27 @@ export default function Order({cart,removeFromCart,updateAmount, empty, e}) {
           <h3 className="header">Asiakkaan tiedot</h3>
           <form onSubmit={order}>
             <div className="form-group">
-              <label>First name:</label>
+              <label>Etunimi:</label>
               <input className="form-control" onChange={e => setFirstname(e.target.value)}/>
             </div>
             <div className="form-group">
-              <label>Last name:</label>
+              <label>Sukunimi:</label>
               <input className="form-control" onChange={e => setLastname(e.target.value)}/>
             </div>
             <div className="form-group">
-              <label>Address:</label>
+              <label>Osoite:</label>
               <input className="form-control" onChange={e => setAddress(e.target.value)}/>
             </div>
             <div className="form-group">
-              <label>Postal code</label>
+              <label>Postinumero</label>
               <input className="form-control" onChange={e => setZip(e.target.value)}/>
             </div>
             <div className="form-group">
-              <label>City</label>
+              <label>Kaupunki</label>
               <input className="form-control" onChange={e => setCity(e.target.value)}/>
             </div>
             <div className="buttons">
-              <button className="btn btn-primary">Order</button>
+              <button className="btn btn-primary">TILAA</button>
             </div>
           </form>
           </>

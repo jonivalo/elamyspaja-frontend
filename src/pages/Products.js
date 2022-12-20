@@ -4,26 +4,40 @@ import {  useParams } from 'react-router-dom';
 import './Products.css';
 
 
-export default function Products({url,addToCart}) {
-  const [categoryName,setCategoryName] = useState('');
+export default function Products({url, addToCart}) {
+  const [name, setName] = useState('')
   const [products, setProducts] = useState([]);
 
   let params = useParams();
   
   useEffect(() => {
-    axios.get(url + 'products/getproducts.php/' + params.categoryId)
-      .then((response) => {
-        const json = response.data;
-        setCategoryName(json.category);
+    let address = '';
+
+    if (params.searchPhrase === undefined) {
+      address = url + 'products/getproducts.php/' + params.categoryId;
+    } else {
+      address = url + 'products/searchproducts.php' + params.searchPhrase;
+    }
+    axios.get(address)
+    .then((response) => {
+      const json = response.data;
+      if (params.searchPhrase === undefined) {
+        setName(json.category);
         setProducts(json.products);
-      }).catch(error => {
-        alert(error.response === undefined ? error : error.response.data.error);
-      })
-  }, [params])
+      } else {
+        setName(params.searchPhrase);
+        setProducts(json);
+      }
+    }
+    )
+  }, [params]
+  )
+
+
   
   return (  
     <div>
-      <h3>Tuotteet {categoryName}</h3>
+      <h3>{name}</h3>
       {products.map(product => (
         <div className="card productwidht">
         <div key={product.id}>

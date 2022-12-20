@@ -7,3 +7,10 @@
 .productwidht{
     width: 40rem;
 }
+
+@media (min-width: 992px){
+  .card productwidht{
+      padding-left: 2rem;
+  }
+  
+}

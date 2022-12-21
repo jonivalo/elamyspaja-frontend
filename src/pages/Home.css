@@ -1,5 +1,8 @@
 .homeheader {
     color:rgb(112, 112, 196);
-    
-    
+    text-align: center;
+}
+.responsive {
+    max-width: 100%;
+    height: auto;
 }

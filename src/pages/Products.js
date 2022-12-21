@@ -36,16 +36,20 @@ export default function Products({url, addToCart}) {
 
   
   return (  
-    <div>
+    <div className="row">
       <h3>{name}</h3>
       {products.map(product => (
+        <div className="col-sm-6">
         <div className="card productwidht">
         <div key={product.id}>
          <h5 className="card-title"> {product.name} </h5>
+         <div> <img src={url + 'images/' + product.image} alt="Card image cap" className="imagesize" /></div>
          <p className="card-text">{product.description}.</p>
          <div> {product.price} €</div>
-         <div> {product.image}</div>
+         
           <button className="btn btn-primary" type="button" onClick={e => addToCart(product)}>Lisääppä tuote lisääppä...</button>
+
+        </div>
         </div>
         </div>
       ))}

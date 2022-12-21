@@ -5,12 +5,28 @@
   }
 
 .productwidht{
-    width: 40rem;
+    width: 28rem;
+}
+
+.imagesize{
+  width:28rem;
 }
 
 @media (min-width: 992px){
   .card productwidht{
-      padding-left: 2rem;
+      width: 28rem;
   }
+
+  .imagesize{
+    width:28rem;
+  }
+
+  .productrow{
+    border-top:  2px solid #333;
+    font-weight: bold;
+    border-bottom: none;
+  }
+
+  
   
 }
